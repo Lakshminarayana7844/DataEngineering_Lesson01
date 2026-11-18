@@ -33,5 +33,37 @@ Column names are extracted from CREATE TABLE statements, including computed fiel
 ## Team
 Lakshmi Narayana Reddy Mandi, Neeraj Bhuma, Bala Sai Kiran.
 
-## Scope notes
-Notebook code and validation queries are provided here. Successful execution must be checked in the target workspace. Genie Code schema review, workspace-folder setup, and the Databricks Git connection are UI steps; code existing in GitHub does not prove those steps were completed. No instructor invitation is sent by this code.
+## Checked in Databricks on 18 November 2026
+All eight Lesson 1 code cells and all three purchasing code cells completed successfully on Free Edition Serverless. The requested `adventure_works` catalog was created, so the fallback was not needed.
+
+| Check | Result |
+|---|---:|
+| Sales fact rows | 121,317 |
+| Distinct sales line IDs | 121,317 |
+| Products in the dimension | 504 |
+| Products sold | 266 |
+| Territories | 10 |
+| Purchase detail before / after cleaning | 8,845 / 8,845 |
+| Purchase headers | 4,012 |
+| Vendors | 104 |
+| Gold purchase fact rows | 8,845 |
+| Product-months where sold exceeds purchased | 3,727 |
+
+### Query 1: five lowest margins per unit
+| ProductID | Product | Sales price | Purchase price | Margin |
+|---|---|---:|---:|---:|
+| 948 | Front Brakes | 63.750711 | 82.834500 | -19.083789 |
+| 907 | Rear Brakes | 63.900000 | 82.834500 | -18.934500 |
+| 937 | HL Mountain Pedal | 48.430988 | 62.989500 | -14.558512 |
+| 932 | ML Road Tire | 24.990000 | 39.458267 | -14.468267 |
+| 940 | HL Road Pedal | 48.594000 | 62.989500 | -14.395500 |
+
+Ties use ProductID order. Negative values mean the weighted net selling price is below the weighted purchase price under this definition, not total accounting profit.
+
+### Query 2: largest monthly gap
+Product 870, Water Bottle - 30 oz., March 2025: 673 units sold and zero units purchased that month, a gap of 673. There are 3,727 matching product-months in total. The full results are saved in `adventure_works.gold.query2_monthly_quantity_gaps`; Query 1 is saved in `adventure_works.gold.query1_lowest_margins`.
+
+### UI steps
+The Git folder was cloned into the workspace. Genie Code read the schema reference from the raw-data volume for Exercise 2 and explained duplicate dimension keys for Exercise 4. A duplicate ProductID matches each sales line more than once, so aggregation repeats its revenue. The notebook checks dimension keys and join row counts rather than trusting a join to warn about this.
+
+The committed notebooks contain the runnable source. Execution results are retained in the Databricks workspace and summarized above. No instructor invitation or submission was made.
