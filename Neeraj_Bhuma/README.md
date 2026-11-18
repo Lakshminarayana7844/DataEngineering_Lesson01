@@ -11,7 +11,7 @@ The separate `.py` files have been replaced by `Neeraj_Bhuma_Simple.ipynb`.
 ## Simple notebook
 `Neeraj_Bhuma_Simple.ipynb` is a separate beginner-friendly version of all the Python-file work. It uses explicit column names and casts, short Python cells, and SQL joins and summaries. Run it from top to bottom on Free Edition Serverless. It uses the existing `adventure_works` catalog and the same source data and table names. It does not depend on running the older notebooks first.
 
-The two original notebooks above are unchanged. The runtime results below describe those original runs. The simple version is being checked separately.
+The two original notebooks above are unchanged. The runtime results below describe those original runs. The simple version was checked separately on 18 November 2026: all 70 code cells completed successfully on Free Edition Serverless. Query 1 gives the same five products and margins listed below; Query 2 gives the same 3,727 product-months and the same largest gap. Its saved results are in the new DataEngineering_Lesson01 Git folder in Databricks.
 
 ## Two stars
 - Sales: `fact_sales`, `dim_product`, `dim_sales_territory`.
