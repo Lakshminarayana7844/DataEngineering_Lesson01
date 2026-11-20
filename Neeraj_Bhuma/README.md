@@ -2,14 +2,18 @@
 
 Fresh implementation for the shared course repository. Existing team files are not changed.
 
-## Run order
-1. `Lesson01_Neeraj_Bhuma.ipynb`: setup, sales-star load, workspace notes, join checks, SQL queries, revenue chart, profiling and the confirmed Hello World team.
-2. `Purchasing_Star_Neeraj_Bhuma.ipynb`: purchasing Bronze, Silver and Gold, followed by both cross-star queries. It includes its own setup cells.
+## Structure
+- `notebooks/`: all notebooks for this homework.
+- `README.md`: this file, with the run order and checked results.
 
-The separate `.py` files have been replaced by `Neeraj_Bhuma_Simple.ipynb`.
+## Run order
+1. `notebooks/Lesson01_Neeraj_Bhuma.ipynb`: setup, sales-star load, workspace notes, join checks, SQL queries, revenue chart, profiling and the confirmed Hello World team.
+2. `notebooks/Purchasing_Star_Neeraj_Bhuma.ipynb`: purchasing Bronze, Silver and Gold, followed by both cross-star queries. It includes its own setup cells.
+
+The separate `.py` files have been replaced by `notebooks/Neeraj_Bhuma_Simple.ipynb`.
 
 ## Simple notebook
-`Neeraj_Bhuma_Simple.ipynb` is a separate beginner-friendly version of all the Python-file work. It uses explicit column names and casts, short Python cells, and SQL joins and summaries. Run it from top to bottom on Free Edition Serverless. It uses the existing `adventure_works` catalog and the same source data and table names. It does not depend on running the older notebooks first.
+`notebooks/Neeraj_Bhuma_Simple.ipynb` is a separate beginner-friendly version of all the Python-file work. It uses explicit column names and casts, short Python cells, and SQL joins and summaries. Run it from top to bottom on Free Edition Serverless. It uses the existing `adventure_works` catalog and the same source data and table names. It does not depend on running the older notebooks first.
 
 The two original notebooks above are unchanged. The runtime results below describe those original runs. The simple version was checked separately on 18 November 2026: all 70 code cells completed successfully on Free Edition Serverless. Query 1 gives the same five products and margins listed below; Query 2 gives the same 3,727 product-months and the same largest gap. Its saved results are in the new DataEngineering_Lesson01 Git folder in Databricks.
 
